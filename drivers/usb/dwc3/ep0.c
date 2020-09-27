@@ -27,6 +27,23 @@
 #include "debug.h"
 #include "gadget.h"
 #include "io.h"
+#include <linux/oem/power/oem_external_fg.h>
+
+static struct notify_usb_enumeration_status
+		*usb_enumeration_status = NULL;
+
+void regsister_notify_usb_enumeration_status(
+	struct notify_usb_enumeration_status *status)
+{
+	if (usb_enumeration_status) {
+		usb_enumeration_status = status;
+		pr_err("multiple usb_enumeration_status called\n");
+	} else {
+		usb_enumeration_status = status;
+	}
+}
+EXPORT_SYMBOL(regsister_notify_usb_enumeration_status);
+
 
 static bool enable_dwc3_u1u2;
 module_param(enable_dwc3_u1u2, bool, 0644);
