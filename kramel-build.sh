@@ -184,7 +184,7 @@ DATE=$(TZ=Asia/Kolkata date +"%Y%m%d-%s")
 	fi
 
 	msg "|| Cloning Anykernel ||"
-	git clone --depth 1 --no-single-branch https://github.com/"$AUTHOR"/AnyKernel3.git -b op7
+	git clone --depth 1 --no-single-branch https://github.com/"$AUTHOR"/AnyKernel3.git -b oneplus8
 	msg "|| Cloning libufdt ||"
 	git clone https://android.googlesource.com/platform/system/libufdt "$KERNEL_DIR"/scripts/ufdt/libufdt
 }
