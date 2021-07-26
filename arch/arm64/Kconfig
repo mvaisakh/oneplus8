@@ -1559,6 +1559,9 @@ config ARCH_HIBERNATION_HEADER
 config ARCH_SUSPEND_POSSIBLE
 	def_bool y
 
+config ONEPLUS
+	bool "OnePlus Build support"
+
 endmenu
 
 menu "CPU Power Management"
