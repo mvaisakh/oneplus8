@@ -118,7 +118,7 @@ static void wb_a_page_log(struct block_device *bdev, int start_segment, char *bu
 	int sector_offset;
 	int dummy;
 	u32 last_buf_offset;
-	static first_write = 1;
+	static int first_write = 1;
 
 	/*
 	 * if ((while_times + 1) >= LOG_TIME)
